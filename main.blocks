@@ -1,0 +1,57 @@
+<xml xmlns="https://developers.google.com/blockly/xml"><variables><variable type="BLOCKLY_TILESET_TYPE" id="SbX@]LzJAv2yoFS~qT-3">0;16;16;0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</variable><variable type="KIND_SpriteKind" id="a:4[-.@HOiNLtS;}1JDJ">Factory</variable><variable type="KIND_SpriteKind" id="80^N9q[C|Fs=wCmSOzK:">Player</variable><variable type="KIND_SpriteKind" id="^5t!EtB.;J:gVt=U#36S">Projectile</variable><variable type="KIND_SpriteKind" id="P!0XnLT.=4@V#n]-(fDB">Food</variable><variable type="KIND_SpriteKind" id="@D5kS;6E}V^#2TGs]6^n">Enemy</variable><variable id="l,feYkk]=Jc9jokJp[.=">loc</variable><variable id="YJ-}s987KGnh#[FIL}Cp">cursor</variable><variable id="5)t4v}H@9O}7v./`KgbC">factory</variable><variable id="aG.G_dbNKmH||zU]AffY">mySprite</variable></variables><block type="pxt-on-start" x="-50" y="10"><statement name="HANDLER"><block type="tilemap_loadMap"><value name="map"><shadow type="create_overworld_map"><field name="tilemap">tiles.createTilemap(
+            hex`1000100001080808080808080808080808080802050909090909090909090909090909070509090909090909090909090909090705090909090909090909090909090907050909090909090909090909090909070509090909090909090909090909090705090909090909090909090909090907050909090909090909090909090909070509090909090909090909090909090705090909090909090909090909090907050909090909090909090909090909070509090909090909090909090909090705090909090909090909090909090907050909090909090909090909090909070509090909090909090909090909090704060606060606060606060606060603`,
+            img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`,
+            [myTiles.tile0,sprites.castle.tilePath1,sprites.castle.tilePath3,sprites.castle.tilePath9,sprites.castle.tilePath7,sprites.castle.tilePath4,sprites.castle.tilePath8,sprites.castle.tilePath6,sprites.castle.tilePath2,sprites.castle.tilePath5],
+            TileScale.Sixteen
+        )</field></shadow></value><next><block type="variables_set"><field name="VAR" id="YJ-}s987KGnh#[FIL}Cp">cursor</field><value name="VALUE"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="spritescreate"><value name="img"><shadow type="screen_image_picker"><field name="img">img`
+f f f f . . . . . . . . f f f f 
+f f f f . . . . . . . . f f f f 
+f f . . . . . . . . . . . . f f 
+f f . . . . . . . . . . . . f f 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . f f f f . . . . . . 
+. . . . . . f f f f . . . . . . 
+. . . . . . f f f f . . . . . . 
+. . . . . . f f f f . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+f f . . . . . . . . . . . . f f 
+f f . . . . . . . . . . . . f f 
+f f f f . . . . . . . . f f f f 
+f f f f . . . . . . . . f f f f 
+`</field></shadow></value><value name="kind"><shadow type="spritekind"><field name="MEMBER">Player</field></shadow></value></block></value><next><block type="mapplaceontile"><value name="sprite"><block type="variables_get"><field name="VAR" id="YJ-}s987KGnh#[FIL}Cp">cursor</field></block></value><value name="loc"><shadow type="mapgettile"><value name="col"><shadow type="math_number"><field name="NUM">3</field></shadow></value><value name="row"><shadow type="math_number"><field name="NUM">3</field></shadow></value></shadow></value><next><block type="Image_replace"><value name="picture"><shadow type="variables_get"/><block type="spriteimage"><value name="sprite"><block type="variables_get"><field name="VAR" id="YJ-}s987KGnh#[FIL}Cp">cursor</field></block></value></block></value><value name="from"><shadow type="colorindexpicker"><field name="index">1</field></shadow></value><value name="to"><shadow type="colorindexpicker"><field name="index">15</field></shadow></value></block></next></block></next></block></next></block></statement></block><block type="keyonevent" x="720" y="0"><field name="button">controller.left</field><field name="event">ControllerButtonEvent.Pressed</field><statement name="HANDLER"><block type="Sprite_blockCombine_change"><field name="property">Sprite.x@set</field><value name="mySprite"><block type="variables_get"><field name="VAR" id="YJ-}s987KGnh#[FIL}Cp">cursor</field></block></value><value name="value"><block type="math_arithmetic"><field name="OP">MINUS</field><value name="A"><shadow type="math_number"><field name="NUM">0</field></shadow></value><value name="B"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="tilemap_tileWidth"/></value></block></value></block></statement></block><block type="keyonevent" x="768" y="96"><field name="button">controller.right</field><field name="event">ControllerButtonEvent.Pressed</field><statement name="HANDLER"><block type="Sprite_blockCombine_change"><field name="property">Sprite.x@set</field><value name="mySprite"><block type="variables_get"><field name="VAR" id="YJ-}s987KGnh#[FIL}Cp">cursor</field></block></value><value name="value"><block type="tilemap_tileWidth"/></value></block></statement></block><block type="keyonevent" x="816" y="192"><field name="button">controller.up</field><field name="event">ControllerButtonEvent.Pressed</field><statement name="HANDLER"><block type="Sprite_blockCombine_change"><field name="property">Sprite.y@set</field><value name="mySprite"><block type="variables_get"><field name="VAR" id="YJ-}s987KGnh#[FIL}Cp">cursor</field></block></value><value name="value"><block type="math_arithmetic"><field name="OP">MINUS</field><value name="A"><shadow type="math_number"><field name="NUM">0</field></shadow></value><value name="B"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="tilemap_tileWidth"/></value></block></value></block></statement></block><block type="keyonevent" x="864" y="288"><field name="button">controller.down</field><field name="event">ControllerButtonEvent.Pressed</field><statement name="HANDLER"><block type="Sprite_blockCombine_change"><field name="property">Sprite.y@set</field><value name="mySprite"><block type="variables_get"><field name="VAR" id="YJ-}s987KGnh#[FIL}Cp">cursor</field></block></value><value name="value"><block type="tilemap_tileWidth"/></value></block></statement></block><block type="keyonevent" x="720" y="440"><field name="button">controller.B</field><field name="event">ControllerButtonEvent.Pressed</field><statement name="HANDLER"><block type="function_call"><mutation name="placeFactory" functionid="wkRNH0_[ymiF,s1`*mL%"/></block></statement></block><block type="function_definition" x="730" y="630"><mutation name="placeFactory" functionid="wkRNH0_[ymiF,s1`*mL%"/><field name="function_name">placeFactory</field><statement name="STACK"><block type="variables_set"><field name="VAR" id="5)t4v}H@9O}7v./`KgbC">factory</field><value name="VALUE"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="spritescreate"><value name="img"><shadow type="screen_image_picker"><field name="img">img`
+. . . . c . . b b . . . . . . . 
+. . . . c c . . c c . c . . . . 
+. . . b c c c b b c . c c . . . 
+. . . b c c c b c c f c c f f . 
+. . . b b c d d b c d f f f f . 
+. . f b c c d d f f f f c c f . 
+. . f d f f d d f f c c c c f . 
+. f f f f f f f c c c c c c f . 
+. f b b b b b f c c c c c c f . 
+. f b b b b b f c c c a c c f . 
+. f b a c c b f c c c a c c f . 
+. f b a a c b f c c c c c f . . 
+. f b f a c b f c c c f f . . . 
+. f b a a c b f c c f . . . . . 
+. f f f f f f f f f . . . . . . 
+. . . . . . . . . . . . . . . . 
+`</field></shadow></value><value name="kind"><shadow type="spritekind"><field name="MEMBER">Factory</field></shadow></value></block></value><next><block type="mapplaceontile"><value name="sprite"><block type="variables_get"><field name="VAR" id="5)t4v}H@9O}7v./`KgbC">factory</field></block></value><value name="loc"><shadow type="mapgettile"><value name="col"><shadow type="math_number"><field name="NUM">0</field></shadow></value><value name="row"><shadow type="math_number"><field name="NUM">0</field></shadow></value></shadow><block type="tilemap_locationOfSprite"><value name="s"><shadow type="variables_get"><field name="VAR" id="YJ-}s987KGnh#[FIL}Cp">cursor</field></shadow></value></block></value></block></next></block></statement></block></xml>
